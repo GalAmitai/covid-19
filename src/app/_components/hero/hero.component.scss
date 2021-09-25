@@ -1,0 +1,84 @@
+@import "theme";
+
+.title {
+    display: flex;
+    flex-direction: row;
+    font-family: "Oswald", sans-serif;
+    color: $primary-color-1;
+    font-weight: bold;
+    gap: 12px;
+    ._l {
+        font-size: 7rem;
+        letter-spacing: -0.05em;
+        line-height: 1;
+        @include tablet {
+            font-size: 7vw;
+        }
+        @include mobile {
+            font-size: 16vw;
+        }
+    }
+    ._r {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        span {
+            line-height: 1;
+        }
+        span:first-child {
+            color: $primary-color-4;
+            font-size: 2rem;
+            letter-spacing: 4.5px;
+            @include tablet {
+                font-size: 2vw;
+            }
+            @include mobile {
+                font-size: 4vw;
+            }
+        }
+        span:last-child {
+            font-size: 3.9rem;
+            @include tablet {
+                font-size: 3.9vw;
+            }
+            @include mobile {
+                font-size: 10vw;
+            }
+        }
+    }
+}
+
+.content {
+    color: $primary-color-1;
+    font-family: "Roboto", sans-serif;
+    margin-top: 40px;
+    @include mobile {
+        margin-top: 15px;
+    }
+    p {
+        font-size: 1.125rem;
+        line-height: 1.67;
+        @include tablet {
+            font-size: 1.4vw;
+        }
+        @include mobile {
+            font-size: 4vw;
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+    @include tablet {
+        margin-top: 3vw;
+    }
+    @include mobile {
+        margin-top: 3vw;
+        justify-content: center;
+        button {
+            width: 50%;
+        }
+    }
+}

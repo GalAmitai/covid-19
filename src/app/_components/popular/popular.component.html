@@ -1,0 +1,27 @@
+<main class="popular-page">
+  <div>
+    <hero></hero>
+  </div>
+  <div class="popular-section">
+    <div class="search">
+      <input type="text" [formControl]="searchInput" placeholder="Search by country">
+      <i class="fa fa-search input-icon"></i>
+    </div>
+
+    <div *ngIf="!(isLoading$ | async); else loading">
+      <div *ngIf="(list$ | async).length > 0 && searchMode === false" class="list">
+        <country-block *ngFor="let covid of (list$ | async)" [covid]="covid"></country-block>
+      </div>
+      <div *ngIf="(searchList$ | async).length > 0 && searchMode === true">
+        <country-block *ngFor="let covid of (searchList$ | async)" [covid]="covid"></country-block>
+      </div>
+      <div *ngIf="searchMode === true && (searchList$ | async).length === 0">
+        <no-results></no-results>
+      </div>
+    </div>
+  </div>
+</main>
+
+<ng-template #loading>
+  <loader></loader>
+</ng-template>

@@ -1,0 +1,10 @@
+@import "_buttons/index.scss";
+@import "_colors/index.scss";
+@import "_responsive/media-queries.scss";
+
+main {
+    margin-top: 20px;
+    @include tablet {
+        padding: 0 50px;
+    }
+}

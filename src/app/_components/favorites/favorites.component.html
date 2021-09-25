@@ -1,0 +1,24 @@
+<main class="favorite-page">
+  <div>
+    <hero></hero>
+  </div>
+  <div class="favorite-section">
+    <div class="title">
+      Favorites
+    </div>
+
+    <div *ngIf="!isLoading; else loading">
+      <div *ngIf="favoritesList.length > 0; else noFavorites" class="list">
+        <country-block *ngFor="let covid of favoritesList" [covid]="covid" [star]="true" (favoritesListener)="refresh()"></country-block>
+      </div>
+    </div>
+  </div>
+</main>
+
+<ng-template #noFavorites>
+  <no-results></no-results>
+</ng-template>
+
+<ng-template #loading>
+  <loader></loader>
+</ng-template>

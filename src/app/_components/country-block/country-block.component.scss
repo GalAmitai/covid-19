@@ -1,0 +1,135 @@
+@import "theme";
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    gap: 12px;
+}
+.block {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    border: 1px solid #eee;
+    width: 85%;
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+    }
+    .icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        img {
+            border-radius: 50%;
+            height: 60px;
+            @include tablet {
+                height: 3vw;
+            }
+        }
+        @include mobile {
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .title {
+            color: $primary-color-1;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            word-break: break-all;
+            width: 100px;
+            @include tablet {
+                width: 10vw;
+            }
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    text-transform: uppercase;
+    width: 100%;
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 33%;
+        position: relative;
+        &::after {
+            content: " ";
+            height: 20px;
+            width: 2px;
+            background: $primary-color-1;
+            position: absolute;
+            right: 0;
+        }
+    }
+    > div:last-child {
+        &::after {
+            content: none;
+        }
+    }
+    ._api_data {
+        font-size: 24px;
+        font-weight: bold;
+        color: $primary-color-1;
+        @include tablet {
+            font-size: 1.5vw;
+        }
+        @include mobile {
+            font-size: 3.5vw;
+        }
+    }
+    ._api_title {
+        margin-top: 5px;
+        color: $primary-color-2;
+        font-size: 14px;
+        font-weight: bold;
+        @include tablet {
+            font-size: 1vw;
+        }
+        @include mobile {
+            font-size: 2.5vw;
+        }
+    }
+}
+
+
+.actions {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    i {
+        color: #fff;
+        background: $primary-color-1;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: .3s all ease-in-out;
+        cursor: pointer;
+        &:hover {
+            color: #fff;
+            background: $primary-color-4;
+        }
+        @include tablet {
+            height: 2vw;
+            width: 2vw;
+            font-size: 1.2vw;
+        }
+    }
+}

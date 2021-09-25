@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="block">
+    <div class="icon">
+      <div class="title">
+        {{ covid.country?.toUpperCase() }}
+      </div>
+      <div>
+        <img src="http://demo.themenio.com/kovid19/images/gfx/symptom-a.png" alt="man">
+      </div>
+    </div>
+    <div class="details">
+      <div>
+        <span [countUp]="covid.deaths" class="_api_data">0</span>
+        <span class="_api_title">Death</span>
+      </div>
+      <div>
+        <span [countUp]="covid.confirmed" class="_api_data">0</span>
+        <span class="_api_title">Confirmed</span>
+      </div>
+      <div>
+        <span [countUp]="covid.recovered" class="_api_data">0</span>
+        <span class="_api_title">Recovered</span>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <i *ngIf="!star" (click)="addFav(covid)" class="action-btn fa fa-star"></i>
+    <i *ngIf="star" (click)="removeFav(covid)" class="action-btn fa fa-remove"></i> 
+    <i (click)="openModal(covid)" class="action-btn fa fa-filter"></i>
+  </div>
+</div>

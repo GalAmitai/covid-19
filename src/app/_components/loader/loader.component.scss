@@ -1,0 +1,18 @@
+@import "theme";
+
+.loading {
+    margin-top: 50px;
+    text-align: center;
+    i {
+        font-size: 36px;
+        color: $primary-color-2;
+    }
+}
+.loadingResult {
+    margin-top: 0;
+    text-align: center;
+    i {
+        font-size: 24px;
+        color: $primary-color-1;
+    }
+}

@@ -1,0 +1,20 @@
+@import "theme";
+
+.no-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+img {
+    width: 60%;
+}
+p {
+    margin-top: 20px;
+    color: $primary-color-1;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+}

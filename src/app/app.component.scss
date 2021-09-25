@@ -1,0 +1,14 @@
+@import "_responsive/media-queries.scss";
+
+#app {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    @include tablet {
+        width: 100%;
+    }
+    @include mobile {
+        width: 100%;
+    }
+}

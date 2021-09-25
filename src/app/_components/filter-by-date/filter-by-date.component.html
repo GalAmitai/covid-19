@@ -1,0 +1,35 @@
+<div class="filter-by-date">
+    <h2 class="title">Status By Date ({{country}})</h2>
+
+    <div class="filter">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput (dateChange)="dateChanged()" [min]="minDate" [formControl]="datePicker" [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
+
+    <div class="results">
+        <div class="details">
+            <div>
+              <span *ngIf="!isLoading; else loading" [countUp]="stats.deaths" class="_api_data">-</span>
+              <span class="_api_title">Death</span>
+            </div>
+            <div>
+              <span *ngIf="!isLoading; else loading" [countUp]="stats.confirmed" class="_api_data">-</span>
+              <span class="_api_title">Confirmed</span>
+            </div>
+            <div>
+              <span *ngIf="!isLoading; else loading" [countUp]="stats.recovered" class="_api_data">-</span>
+              <span class="_api_title">Recovered</span>
+            </div>
+          </div>
+    </div>
+
+    <button (click)="close()" class="close-btn">Close</button>
+</div>
+
+<ng-template #loading>
+  <loader [type]="1"></loader>
+</ng-template>

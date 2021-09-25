@@ -1,0 +1,76 @@
+@import "theme";
+
+.filter-by-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: $primary-color-1;
+    margin-bottom: 20px;
+}
+.results {
+    width: 100%;
+    margin: 10px 0 40px;
+}
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    text-transform: uppercase;
+    width: 100%;
+    @include mobile {
+        flex-direction: column;
+    }
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 33%;
+        position: relative;
+        @include mobile {
+            width: 100%;
+            padding: 15px 0;
+        }
+        &::after {
+            content: " ";
+            height: 20px;
+            width: 2px;
+            background: $primary-color-1;
+            position: absolute;
+            right: 0;
+            @include mobile {
+                height: 2px;
+                width: 20px;
+                right: unset;
+                bottom: 0;
+            }
+        }
+    }
+    > div:last-child {
+        &::after {
+            content: none;
+        }
+    }
+    ._api_data {
+        font-size: 24px;
+        font-weight: bold;
+        color: $primary-color-1;
+    }
+    ._api_title {
+        margin-top: 5px;
+        color: $primary-color-2;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
