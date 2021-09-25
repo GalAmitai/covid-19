@@ -8,7 +8,7 @@ export class FavoritesService {
 
     private add(covid: CovidItem) {
       const ls = window.localStorage.getItem('covid-fav');
-      if(!ls && ls.length) {
+      if(!ls) {
         window.localStorage.setItem('covid-fav', JSON.stringify([covid]));
       } else {
         let favorites = this.getFavorites();
@@ -19,23 +19,19 @@ export class FavoritesService {
 
     private remove(covid: CovidItem) {
       const ls = window.localStorage.getItem('covid-fav');
-      if(!ls && ls.length) return;
+      if(!ls) return;
       let favorites = this.getFavorites();
       favorites = favorites.filter(e => e.country !== covid.country);
       window.localStorage.setItem('covid-fav', JSON.stringify(favorites));
     }
 
     toggleFavorite(covid: CovidItem) {
-      const ls = window.localStorage.getItem('covid-fav');
-      if(!ls && ls.length) this.add(covid);
-      else {
-        this.updateList(covid);
-      }
+      this.updateList(covid);
     }
 
     getFavorites(): CovidItem[] {
       const ls = window.localStorage.getItem('covid-fav');
-      if(!ls && ls.length) return [];
+      if(!ls) return [];
       return JSON.parse(ls);
     }
 
